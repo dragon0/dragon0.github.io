@@ -4,6 +4,8 @@
       <h1 class="f4 lh-condensed mb-1">
         <a href="{{ repository.html_url }}">
           {% octicon repo height:20 class:"mr-1 v-align-middle" fill:"#586069" aria-label:repo %}
+        </a>
+        <a href="{% if repository.homepage != null and repository.homepage != ""%}{{ repository.homepage }}{% else %}{{ repository.html_url }}{% endif %}">
           {{ repository.name }}
         </a>
       </h1>
