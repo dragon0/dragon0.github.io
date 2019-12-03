@@ -67,6 +67,8 @@ Vagrant.configure("2") do |config|
     apt-get update
     apt-get install -y ruby ruby-dev build-essential zlib1g-dev
     gem install bundler
+    unlink /etc/localtime
+    ln -s /usr/share/zoneinfo/America/Los_Angeles /etc/localtime
   SHELL
 
   # NOTE bundle install uses sudo. This may break in the future if sudo becomes non-interactive
