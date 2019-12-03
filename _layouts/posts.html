@@ -24,13 +24,13 @@
             <h1 class="f00-light lh-condensed mb-5">{{ page.title }}</h1>
             {{ content }}
 
-<div class="d-sm-flex flex-wrap gutter-condensed mb-4">
-  {% for post in site.posts %}
-    <div class="col-sm-6 col-md-12 col-lg-6 col-xl-4 mb-3">
-      {% include post-card.html %}
-    </div>
-  {% endfor %}
-</div>
+            <div class="d-sm-flex flex-wrap gutter-condensed mb-4">
+              {% for post in site.posts %}
+              <div class="col-sm-6 col-md-12 col-lg-6 col-xl-4 mb-3">
+                {% include post-card.html %}
+              </div>
+              {% endfor %}
+            </div>
           </div>
         </div>
       </div>
