@@ -8,6 +8,10 @@
       {{ content }}
     </div>
 
+      <div class="my-6">
+        {% include spotlight.html %}
+      </div>
+
     {% unless posts_total == 0 %}
       <div class="my-6">
         {% include thoughts.html %}
@@ -37,6 +41,10 @@
             {{ content }}
           </div>
         {% endunless %}
+
+      <div class="my-6">
+        {% include spotlight.html %}
+      </div>
 
         {% unless posts_total == 0 %}
           {% include thoughts.html %}

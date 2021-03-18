@@ -59,3 +59,8 @@ topics:
     web_url: https://www.rust-lang.org/
     image_url: https://www.rust-lang.org/static/images/rust-logo-blk.svg
 
+collections:
+    showcase:
+        output: true
+        #FIXME sort_by doesn't seem to want to work
+        sort_by: priority
