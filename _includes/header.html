@@ -10,11 +10,15 @@
 
 {% assign user = site.github.owner %}
 
-{% if page.path contains '_posts' %}
+{% if page.title %}
   {% assign page_title = page.title %}
-  {% assign meta_description = page.content | strip_html | strip_newlines | xml_escape | truncate: 300 %}
 {% else %}
   {% assign page_title = user.name %}
+{% endif %}
+
+{% if page.content %}
+  {% assign meta_description = page.content | strip_html | strip_newlines | xml_escape | truncate: 300 %}
+{% else %}
   {% assign meta_description = user.bio | strip_html | strip_newlines | xml_escape | truncate: 300 %}
 {% endif %}
 
@@ -22,7 +26,7 @@
 <html class="min-height-full">
   <head>
     <meta charset="utf-8">
-    <title>{{ page_title }}</title>
+    <title>{{ page.title }}</title>
     <meta name="description" content="{{ meta_description }}" />
     <meta property="og:title" content="{{ user.name }}" />
     <meta property="og:image" content="{{ user.avatar_url }}" />
