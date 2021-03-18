@@ -65,8 +65,9 @@ Vagrant.configure("2") do |config|
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
     apt-get update
+    apt-get upgrade
     apt-get install -y ruby ruby-dev build-essential zlib1g-dev
-    gem install bundler
+    gem install bundler -v "$(grep -A 1 "BUNDLED WITH" /vagrant/Gemfile.lock | tail -n 1)"
     unlink /etc/localtime
     ln -s /usr/share/zoneinfo/America/Los_Angeles /etc/localtime
   SHELL
